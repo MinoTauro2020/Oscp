@@ -1,4 +1,21 @@
 #ADD USER
+
 echo "root2:bWBoOyE1sFaiQ:0:0:root:/root:/bin/bash" >> passwd
 $ openssl passwd mypass
 bWBoOyE1sFaiQ
+
+grep -rnw '.' -e 'supervisor'
+
+xargs -a navy -I@ sh -c 'assetfinder' @
+xargs -a navy -I@ -P5 sh -c 'comando' @
+
+libxml2 and libxslt 
+
+httpx -silent -path xmlrpc.php -mc 200 -threads
+ ip addr show tun0
+tmux -list-sessions
+arp -na
+iptables --list
+route -n
+
+tcpdump -i tun0 -icmp -n
