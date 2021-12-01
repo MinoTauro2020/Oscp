@@ -1,0 +1,18 @@
+https://chickenpwny.github.io/webapp/wfuzz/
+https://wfuzz.readthedocs.io/en/latest/user/advanced.html
+https://securitybytes.io/wfuzz-using-the-web-brute-forcer-1bf8890db2f
+https://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-online-web-form-passwords-with-thc-hydra-burp-suite-0160643/
+
+
+wfuzz -c -z range 1,65555 --hl=2
+
+wfuzz -z help y sale todos los payloads
+
+wfuzz -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -H "Host: FUZZ.host.com" --hc 200 --hw 356  -t 100 10.10.10.101
+
+-L --HH=40wfuz
+4 -d 'username=gionavi&password=FUZZ' htto://login
+
+wfuzz -c -L -t 500 --hh=
+
+wfuzz -c -z file,users.txt -z file,users.txt -d 'username:FUZZ&password=FUZ2Z' http://192.168.0.110
