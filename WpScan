@@ -1,0 +1,13 @@
+wpscan --url $ip/blog --proxy $ip:3129
+wpscan --url https://192.168.1.13:12380/blogblog/ --enumerate ua p
+sudo wpscan --url https://10.10.10.23:12380/blogblog/ --enumerat e uap --disable-tls-checks
+--Check for vulnerable plugins!!
+
+-eu -ep -et
+
+wpscan --url  --enumerate p,t,u,tt
+
+edit template y buscarlo por otra ruta
+plugin upload
+
+wpscan --url -e at -e ap -e u
