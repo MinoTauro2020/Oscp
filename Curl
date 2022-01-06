@@ -1,0 +1,27 @@
+ PUT:https://curl.haxx.se/docs/manual.html ejemplos
+
+curl  https://172.16.1.13/cgi-bin/cgi.cgi --insecure
+problemas ssl
+
+--insecure
+
+curl -s se ejecuta
+run -j -z
+curl -T backup.tar.gz ftp://192.168.247.128 --user usuario:contraseña
+
+curl --upload-file phpinfo.php -u 'DOMAIN\Username' smb://10.10.10.123/Development/archiv
+
+
+curl --header "Content-Type: application/json" --request POST --data '{username":"admin","password":"aserwerwer"}' http://ip:8000/login
+
+curl --upload-file phpinfo.php -u 'root' smb://10.10.10.123/Development/
+
+curl --upload-file phpinfo.php -u 'DOMAIN\Username' smb://10.10.10.123/Development/archiv
+
+curl -X POST http://10.10.10.137:3000/login -d "username=<USER>&password=<PASS>" -i
+
+curl --header "Authorization:Bearer token" ip/users
+
+curl --silent "http" | xdd -ps -r
+
+curl -d o r  @nombrearchimoxml http://ruta
